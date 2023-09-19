@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://qhere-backend-dev.azurewebsites.net/api/app/content?Type=2')
+    fetch('https://appointment-api.pentavalue.com/modules/privacyPolicy', {method: "GET"})
         .then(response => response.json())
         .then(data => {
             const responseContainer = document.getElementById('response-container');
-            responseContainer.innerHTML = JSON.stringify(data, null, 2);
+            responseContainer.innerHTML = JSON.stringify(data.data.PrivacyPolicy, null, 2);
         })
         .catch(error => {
             console.error('Error fetching data:', error);
